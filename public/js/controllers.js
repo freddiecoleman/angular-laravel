@@ -14,11 +14,11 @@
 
     $scope.submit = function() {
 
-      formData = $scope.form;
+      data = { username: $scope.username, message: $scope.message };
 
-      $http.post('api/chat.json', formData).success(function(data) {
+      $http.post('api/chat.json', data).success(function(updatedData) {
 
-        alert('hi');
+        $scope.messages = updatedData;
 
       });
       

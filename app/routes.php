@@ -20,3 +20,13 @@ Route::get('api/chat.json', function()
 {
   return json_encode(Chat::all());
 });
+
+Route::post('api/chat.json', function()
+{
+  $chat = new Chat;
+  $chat->username = Input::get('username');
+  $chat->text = Input::get('message');
+  $chat->save();
+
+  return json_encode(Chat::all());
+});
