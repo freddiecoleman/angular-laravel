@@ -18,7 +18,7 @@ Route::get('/', function()
 
 Route::get('api/chat.json', function()
 {
-  return json_encode(Chat::all());
+  return Chat::all();
 });
 
 Route::post('api/chat.json', function()
@@ -28,5 +28,5 @@ Route::post('api/chat.json', function()
   $chat->text = Input::get('message');
   $chat->save();
 
-  return json_encode(Chat::all());
+  return Chat::all();
 });
