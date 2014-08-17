@@ -30,3 +30,11 @@ Route::post('api/chat.json', function()
 
   return Chat::all();
 });
+
+Route::post('api/chat/{id}', function($id)
+{
+  $message = Chat::find($id);
+  $message->delete();
+
+  return Chat::all();
+});

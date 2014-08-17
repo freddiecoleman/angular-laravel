@@ -23,6 +23,18 @@
       });
       
     };
+
+    $scope.deleteMessage = function() {
+
+      message = {};
+
+      $http.post('api/chat/'+this.message.id, message).success(function(updatedData) {
+
+        $scope.messages = updatedData;
+
+      });
+
+    };
     
 
   });
