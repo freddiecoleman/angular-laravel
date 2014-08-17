@@ -13,5 +13,10 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	dd('test');
+});
+
+Route::get('api/chat.json', function()
+{
+  return json_encode(Chat::all());
 });
